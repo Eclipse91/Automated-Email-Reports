@@ -66,7 +66,7 @@ This module handles the sending of emails with attachments. It includes the foll
    ```bash
    python main.py
    ```
-5.Check the `ftp_transfer_logger.log` file for program logs and any potential issues.
+5.Check the `email_logger.log` file for program logs and any potential issues.
 
 ## Usage
 
