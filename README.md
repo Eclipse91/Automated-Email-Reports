@@ -60,7 +60,7 @@ This module handles the sending of emails with attachments. It includes the foll
 3. **Logging:**
     - The `email_logger.log` file records program execution, errors, and email sending information.
 
-## Dependencies
+## Requirements
 
 - Python 3.x
 - Libraries: `smtplib`, `email`, `os`, `schedule`
