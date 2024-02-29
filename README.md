@@ -45,6 +45,29 @@ This module handles the sending of emails with attachments. It includes the foll
     - `test_login`: Tests the login credentials.
     - `send_email`: Sends emails with attachments to clients.
 
+## Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Eclipse91/Automated-Email-Reports.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Automated-Email-Reports
+   ```
+
+3. Explore Configuration Below
+   Update the config.ini adding the parameters required
+4. Run the application:
+
+   ```bash
+   python main.py
+   ```
+5.Check the `ftp_transfer_logger.log` file for program logs and any potential issues.
+
 ## Usage
 
 1. **Configuration:**
@@ -65,8 +88,11 @@ This module handles the sending of emails with attachments. It includes the foll
 - Python 3.x
 - Libraries: `smtplib`, `email`, `os`, `schedule`
 
+## License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
+
 ## Notes
 
-- Make sure to set up the correct server configurations based on the email domain in the `config.ini` file.
-
-Feel free to customize the script and configurations according to your specific use case.
+Feel free to contribute or report issues!
+This README provides a clearer structure, concise information, and instructions for setting up and running the Automated-Email-Reports. Adjust the content as needed for your project.
