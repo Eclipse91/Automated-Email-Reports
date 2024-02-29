@@ -45,6 +45,11 @@ This module handles the sending of emails with attachments. It includes the foll
     - `test_login`: Tests the login credentials.
     - `send_email`: Sends emails with attachments to clients.
 
+## Requirements
+
+- Python 3.x
+- Libraries: `smtplib`, `email`, `os`, `schedule`
+
 ## Getting Started
 
 1. Clone the repository:
@@ -82,11 +87,6 @@ This module handles the sending of emails with attachments. It includes the foll
 
 3. **Logging:**
     - The `email_logger.log` file records program execution, errors, and email sending information.
-
-## Requirements
-
-- Python 3.x
-- Libraries: `smtplib`, `email`, `os`, `schedule`
 
 ## License
 
