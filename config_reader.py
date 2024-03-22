@@ -10,7 +10,6 @@ class ConfigReader:
     Attributes:
         parameters (dict): A dictionary to store the configuration parameters.
     '''
-
     def __init__(self):
         self.parameters = {}
 
