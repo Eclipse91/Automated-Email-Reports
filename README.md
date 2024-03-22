@@ -2,49 +2,6 @@
 
 This project aims to automate the process of sending daily reports to clients via email. The script, `main.py`, utilizes various libraries to achieve this automation, including `smtplib`, `email`, `os`, and `schedule`. The project also includes supporting modules like `config_reader.py` for reading and validating configuration parameters and `email_sender.py` for sending emails.
 
-## Project Overview
-
-### main.py
-
-The main script orchestrates the entire automation process. It performs the following steps:
-
-1. **Import Necessary Libraries:**
-    - `logging`: For logging information and errors.
-    - `sched`: For scheduling the script to run daily.
-    - `time`: For handling time-related operations.
-    - `datetime`: For working with date and time.
-    - `ConfigReader`: Module for reading and validating configuration parameters.
-    - `EmailSender`: Module for sending emails.
-
-2. **Function Definitions:**
-    - `send_daily_reports`: Schedules and sends daily reports to clients.
-    - `main`: The main function that initializes logging, reads configuration, and schedules the daily report sending.
-
-3. **Execution:**
-    - Checks configuration parameters.
-    - Initializes an `EmailSender` object.
-    - Tests login credentials.
-    - Schedules the daily report sending using the `schedule` library.
-
-### config_reader.py
-
-This module reads and validates configuration parameters from the `config.ini` file. It includes the following:
-
-- `ConfigReader` class with methods:
-    - `read_config_file`: Reads the configuration file and populates the parameters dictionary.
-    - `check_parameters`: Validates the configuration parameters.
-    - `validate_datetime_format`: Validates the format of a datetime string.
-    - `add_server_configuration`: Adds server configuration based on the email domain.
-    - `extract_domain`: Extracts the domain from an email address.
-
-### email_sender.py
-
-This module handles the sending of emails with attachments. It includes the following:
-
-- `EmailSender` class with methods:
-    - `test_login`: Tests the login credentials.
-    - `send_email`: Sends emails with attachments to clients.
-
 ## Requirements
 
 - Python 3.x
