@@ -5,7 +5,6 @@ This project aims to automate the process of sending daily reports to clients vi
 ## Requirements
 
 - Python 3.x
-- Libraries: `smtplib`, `email`, `os`, `schedule`
 
 ## Getting Started
 
