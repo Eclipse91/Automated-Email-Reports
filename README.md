@@ -25,7 +25,7 @@ This project aims to automate the process of sending daily reports to clients vi
 4. Run the application:
 
    ```bash
-   python main.py
+   python3 main.py
    ```
 5.Check the `email_logger.log` file for program logs and any potential issues.
 
