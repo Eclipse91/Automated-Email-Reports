@@ -5,6 +5,7 @@ This project aims to automate the process of sending daily reports to clients vi
 ## Requirements
 
 - Python 3.x
+- Required Python packages are listed in the requirements.txt file
 
 ## Getting Started
 
@@ -19,30 +20,37 @@ This project aims to automate the process of sending daily reports to clients vi
    ```bash
    cd Automated-Email-Reports
    ```
+4. Install the required dependencies (creating a virtual environment is strongly recommended before this step):
 
-3. Explore Configuration Below
-   Update the config.ini adding the parameters required
-4. Run the application:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Update the config.ini and the .env file adding the parameters required, follow the steps outlined in the [Configuration](#configuration) section
+
+6. Run the application:
 
    ```bash
    python3 main.py
    ```
-5.Check the `email_logger.log` file for program logs and any potential issues.
+7. Check the `email_logger.log` file for program logs and any potential issues.
 
-## Usage
-
-1. **Configuration:**
-    - Edit the config.ini file to include the necessary configuration parameters, such as your email, your password, the clients' email addresses, and a valid schedule
+## Configuration:
+    - Open your .env file and set EMAIL_USERNAME = your_email and EMAIL_PASSWORD = your_password
+    - Edit the config.ini file to include the necessary configuration parameters, such as the clients' email addresses, the path of the reports and a valid schedule
     - Ensure the data is formatted correctly (YYYY-MM-DD hh:mm:ss) and that it represents a timestamp occurring after the program execution time
     - Ensure the presence of valid report file paths
     - Body and subject of the mail are optional
 
+## Usage
+
+1. **Configuration:**
+    - Update the config.ini and the .env file adding the parameters required.
+
 2. **Execution:**
     - Run the `main.py` script to initiate the automated email report sending process.
-    - Check the `email_logger.log` file for logs and information about the execution.
 
 3. **Logging:**
-    - The `email_logger.log` file records program execution, errors, and email sending information.
+    - Check the `email_logger.log` file for logs and information about the execution.
 
 ## License
 

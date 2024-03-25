@@ -1,6 +1,6 @@
+import os
 import logging
 from datetime import datetime
-import os
 
 
 class ConfigReader:
@@ -33,9 +33,9 @@ class ConfigReader:
 
         else:
             if self.check_parameters():
-                logging.info('Parameters config.ini are correct')
+                logging.info('Parameters in config.ini are correct')
             else:
-                logging.error("Configuration issue detected in config.ini.")
+                logging.error('Configuration issue detected in config.ini.')
                 
     def check_parameters(self):
         '''
@@ -43,9 +43,9 @@ class ConfigReader:
         '''
         # Check the presence of at least one client email
         if self.parameters.get('clients_email'):
-            self.parameters['clients_email'] = self.parameters['clients_email'].replace(" ", "").split(',')
+            self.parameters['clients_email'] = self.parameters['clients_email'].replace(' ', '').split(',')
         else:
-            logging.error("Client email missing")
+            logging.error('Client email missing')
             self.parameters.clear()
             return False
 
@@ -57,7 +57,7 @@ class ConfigReader:
 
         # Check the existence of the report file
         if self.parameters.get('report_file_path'):
-            self.parameters['report_file_path'] = self.parameters['report_file_path'].replace(" ", "").split(',')
+            self.parameters['report_file_path'] = self.parameters['report_file_path'].replace(' ', '').split(',')
             for report in self.parameters['report_file_path']:
                 if not os.path.exists(report):
                     logging.error(f"Report file not found for {self.parameters.get('report_file_path')}")
@@ -65,12 +65,6 @@ class ConfigReader:
                     return False
         else:
             logging.error('File is missing.')
-            self.parameters.clear()
-            return False
-
-        # Create the configuration of the server
-        if not self.add_server_configuration(self.parameters.get('email_username')):
-            logging.error(f"Unknown server configuration for this email: {self.parameters.get('email_username')}")
             self.parameters.clear()
             return False
 
@@ -89,7 +83,7 @@ class ConfigReader:
         Validate the format of a datetime string.
         '''
         try:
-            datetime_object = datetime.strptime(datetime_str, "%Y-%m-%d %H:%M:%S")
+            datetime_object = datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S')
             current_time = datetime.now()
 
             if datetime_object < current_time:
@@ -99,36 +93,3 @@ class ConfigReader:
 
         except ValueError:
             return False
-
-    def add_server_configuration(self, email):
-        '''
-        Add server configuration based on the email domain.
-        '''
-        domain = self.extract_domain(email)
-
-        if domain == 'gmail':
-            self.parameters['email_server'] = 'smtp.gmail.com'
-            self.parameters['email_port'] = 587
-        elif domain == 'yahoo':
-            self.parameters['email_server'] = 'smtp.mail.yahoo.com'
-            self.parameters['email_port'] = 587
-        elif domain == 'outlook':
-            self.parameters['email_server'] = 'smtp.office365.com'
-            self.parameters['email_port'] = 587
-        else:
-            return False
-
-        return True
-
-    def extract_domain(self, email):
-        '''
-        Extract the domain from an email address.
-        '''
-        at_index = email.find('@')
-        dot_index = email.find('.', at_index)
-
-        if at_index != -1 and dot_index != -1:
-            domain = email[at_index + 1:dot_index]
-            return domain
-        else:
-            return None
