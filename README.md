@@ -35,11 +35,11 @@ This project aims to automate the process of sending daily reports to clients vi
 7. Check the `email_logger.log` file for program logs and any potential issues.
 
 ## Configuration:
-    - Open your .env file and set EMAIL_USERNAME = your_email and EMAIL_PASSWORD = your_password
-    - Edit the config.ini file to include the necessary configuration parameters, such as the clients' email addresses, the path of the reports and a valid schedule
-    - Ensure the data is formatted correctly (YYYY-MM-DD hh:mm:ss) and that it represents a timestamp occurring after the program execution time
-    - Ensure the presence of valid report file paths
-    - Body and subject of the mail are optional
+ - Open your .env file and set EMAIL_USERNAME = your_email and EMAIL_PASSWORD = your_password
+ - Edit the config.ini file to include the necessary configuration parameters, such as the clients' email addresses, the path of the reports and a valid schedule
+ - Ensure the data is formatted correctly (YYYY-MM-DD hh:mm:ss) and that it represents a timestamp occurring after the program execution time
+ - Ensure the presence of valid report file paths
+ - Body and subject of the mail are optional
 
 ## Usage
 
